@@ -27,7 +27,7 @@ const createProduct = async (product) => {
     }
 };
 
-const updateByid = async (id, product) => {
+const updateById = async (id, product) => {
     try {
         const response = await axios.put(`http://localhost:3015/products/${id}`, product);
         return response.data;
@@ -45,4 +45,4 @@ const deleteById = async (id) => {
     }
 };
 
-export { index, getById, createProduct, updateByid, deleteById };
+export { index, getById, createProduct, updateById, deleteById };
