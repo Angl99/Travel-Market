@@ -45,4 +45,4 @@ const deleteById = async (id) => {
     }
 };
 
-export default { index, getById, create, updateByid, deleteById };
+export { index, getById, create, updateByid, deleteById };
