@@ -10,9 +10,7 @@ const VendorDashboard = () => {
           <Link to="/create-product">Create New Product</Link>
         </li>
         {/* Add other dashboard functionalities here */}
-        <li>View Orders</li>
         <li>Manage Products</li>
-        <li>Update Profile</li>
       </ul>
     </div>
   );
