@@ -6,6 +6,10 @@ import Home from "./components/Home"
 import Login from "./components/Login/Login"
 import UserSignUp from "./components/SignUp/UserSignUp";
 import VendorDashboard from "./components/VendorView/VendorDashboard";
+import ProductForm from "./components/Products/ProductForm";
+import ProductList from "./components/Products/ProductList";
+import UpdateProduct from './components/Products/UpdateProduct';
+import ProductItem from "./components/Products/ProductItem";
 
 // import './App.css'
 
@@ -37,6 +41,10 @@ function App() {
           <Route path="/userSignUp" element={<UserSignUp />} />
           {/* <Route path="/vendorSignUp" element = {<VendorSignUp/>} /> */}
           <Route path="/vendorDash" element={<VendorDashboard/>} />
+          <Route path="/create-product" element={<ProductForm />} />
+          <Route path="/manage-products" element={<ProductList />} />
+          <Route path="/update-product/:productId" element={<UpdateProduct />} />
+          <Route path="/product-details/:productId" element={<ProductItem />} />
         </Routes>
       </Router>
     </>

@@ -18,7 +18,7 @@ const getById = async (id) => {
     }
 };
 
-const create = async (product) => {
+const createProduct = async (product) => {
     try {
         const response = await axios.post("http://localhost:3015/products", product);
         return response.data;
@@ -27,7 +27,7 @@ const create = async (product) => {
     }
 };
 
-const updateByid = async (id, product) => {
+const updateById = async (id, product) => {
     try {
         const response = await axios.put(`http://localhost:3015/products/${id}`, product);
         return response.data;
@@ -45,4 +45,4 @@ const deleteById = async (id) => {
     }
 };
 
-export default { index, getById, create, updateByid, deleteById };
+export { index, getById, createProduct, updateById, deleteById };
