@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { index } from "../../Helper/ProductHelper"
+import { index, deleteById } from "../../Helper/ProductHelper"
 import { Link, useNavigate } from 'react-router-dom'; // For update link
 
 
@@ -16,9 +16,19 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-//   const handleEditProduct = (productId) => {
-//     navigate(`/update-product/${productId}`)
-//   };
+  const handleDeleteProduct = async (productId) => {
+    if (window.confirm('Are you sure you want to delete this product?')) {
+      try {
+        const response = await deleteById(productId); 
+        console.log('Product deleted successfully:', response);
+        const updatedProducts = products.filter((product) => product.id !== productId); 
+        setProducts(updatedProducts); 
+      } catch (error) {
+        console.error('Error deleting product:', error);
+        
+      }
+    }
+  };
 
   return (
     <div className="product-list">
@@ -42,7 +52,7 @@ const ProductList = () => {
               {/* Add cells for other product details */}
               <td>
                 <Link to={`/update-product/${product.id}`}>Edit</Link> {/* Link to update route */}
-                {/* <button onClick={() => handleDeleteProduct(product.id)}>Delete</button> */}
+                <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
               </td>
             </tr>
           ))}
