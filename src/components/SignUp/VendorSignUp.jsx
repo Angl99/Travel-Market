@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useHistory } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import {create} from  "../../Helper/VendorHelper"
 
 const VendorSignUp = () => {
@@ -9,13 +9,13 @@ const VendorSignUp = () => {
     const [hours, setHours] = useState('');
     const [paymentTypes, setPaymentTypes] = useState('');
     const [errorMessage, setErrorMessage] = useState(null);
-    const history = useHistory();
+    const navigate = useNavigate();
   
     const handleSubmit = async (event) => {
       event.preventDefault();
   
       try {
-        const response = await fetch('/api/create-vendor', { // Assuming backend endpoint
+        const response = await fetch(create, { 
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -33,7 +33,8 @@ const VendorSignUp = () => {
   
         const vendorData = await response.json();
         console.log('Vendor created successfully:', vendorData);
-        history.push('/vendor-dashboard'); // Redirect to vendor dashboard after signup
+        alert('Vendor created successfully!')
+        navigate('/vendorDash'); // Redirect to vendor dashboard after signup
       } catch (error) {
         console.error('Error creating vendor:', error);
         setErrorMessage(error.message);
