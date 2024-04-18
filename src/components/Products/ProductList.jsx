@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { index } from "../../Helper/ProductHelper"
+import { Link } from 'react-router-dom'; // For update link
+
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -13,6 +15,10 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
+  const handleEditProduct = (productId) => {
+    // Handle navigation to update product route
+  };
+
   return (
     <div className="product-list">
       <h2>Products</h2>
@@ -23,6 +29,7 @@ const ProductList = () => {
             <th>Description</th>
             <th>Price</th>
             {/* Add headers for other product details */}
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +39,10 @@ const ProductList = () => {
               <td>{product.description}</td>
               <td>{product.price}</td>
               {/* Add cells for other product details */}
-              {/* Optionally add edit/delete buttons per product */}
+              <td>
+                <Link to={`/update-product/${product.id}`}>Edit</Link> {/* Link to update route */}
+                {/* <button onClick={() => handleDeleteProduct(product.id)}>Delete</button> */}
+              </td>
             </tr>
           ))}
         </tbody>
