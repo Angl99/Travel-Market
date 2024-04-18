@@ -29,7 +29,7 @@ const create = async (vendor) => {
 
 const updateByid = async (id, vendor) => {
     try {
-        const response = await axios.put(`http://localhost:3015/vendors/${id}`, user);
+        const response = await axios.put(`http://localhost:3015/vendors/${id}`, vendor);
         return response.data;
     } catch (error) {
         console.error(error);
