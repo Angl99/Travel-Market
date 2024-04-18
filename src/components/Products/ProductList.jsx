@@ -23,6 +23,8 @@ const ProductList = () => {
         console.log('Product deleted successfully:', response);
         const updatedProducts = products.filter((product) => product.id !== productId); 
         setProducts(updatedProducts); 
+
+        alert('Product deleted successfully!');
       } catch (error) {
         console.error('Error deleting product:', error);
         
@@ -51,7 +53,7 @@ const ProductList = () => {
               <td>{product.price}</td>
               {/* Add cells for other product details */}
               <td>
-                <Link to={`/update-product/${product.id}`}>Edit</Link> {/* Link to update route */}
+                <Link to={`/update-product/${product.id}`}>Edit</Link> 
                 <Link to={`/product-details/${product.id}`}>Details</Link> 
                 <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
               </td>
