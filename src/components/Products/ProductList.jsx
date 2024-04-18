@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { index } from "../../Helper/ProductHelper"
-import { Link } from 'react-router-dom'; // For update link
+import { Link, useNavigate } from 'react-router-dom'; // For update link
 
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -15,9 +16,9 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  const handleEditProduct = (productId) => {
-    // Handle navigation to update product route
-  };
+//   const handleEditProduct = (productId) => {
+//     navigate(`/update-product/${productId}`)
+//   };
 
   return (
     <div className="product-list">
