@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-function UserSignUp() {
+function Login() {
   return (
 
     <Link to="/" className="homepage">
@@ -10,4 +10,4 @@ function UserSignUp() {
   );
 }
 
-export default UserSignUp;
+export default Login;
