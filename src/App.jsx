@@ -7,7 +7,8 @@ import Login from "./components/Login/Login"
 import UserSignUp from "./components/SignUp/UserSignUp";
 import VendorDashboard from "./components/VendorView/VendorDashboard";
 import ProductForm from "./components/Products/ProductForm";
-import ProductList from "./components/Products/ProductList"
+import ProductList from "./components/Products/ProductList";
+import UpdateProduct from './components/Products/UpdateProduct';
 
 // import './App.css'
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/vendorDash" element={<VendorDashboard/>} />
           <Route path="/create-product" element={<ProductForm />} />
           <Route path="/manage-products" element={<ProductList />} />
+          <Route path="/update-product/:productId" element={<UpdateProduct />} />
         </Routes>
       </Router>
     </>

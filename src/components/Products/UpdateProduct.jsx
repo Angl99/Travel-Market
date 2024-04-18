@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { updateById } from "../../Helper/ProductHelper"
+import { updateById, getById } from "../../Helper/ProductHelper"
 import { useParams, useNavigate } from 'react-router-dom';
 
 const UpdateProduct = () => {
   const { productId } = useParams(); 
   const navigate = useNavigate();
-  const [product, setProduct] = useState({});
+//   const [product, setProduct] = useState({});
 
   const [formData, setFormData] = useState({
     name: '',
@@ -14,7 +14,7 @@ const UpdateProduct = () => {
     image: '',
   });
 
-  const [isLoading, setIsLoading] = useState(true); e
+  const [isLoading, setIsLoading] = useState(true); 
   const [error, setError] = useState(null); 
 
   useEffect(() => {
@@ -23,14 +23,9 @@ const UpdateProduct = () => {
       setError(null); 
 
       try {
-        const fetchedProduct = await updateById(productId);
-        setProduct(fetchedProduct);
-        setFormData({ 
-          name: fetchedProduct.name,
-          description: fetchedProduct.description,
-          price: fetchedProduct.price,
-          image: fetchedProduct.image,
-        });
+        const fetchedProduct = await getById(productId);
+        // setProduct(fetchedProduct);
+        setFormData(fetchedProduct);
       } catch (error) {
         console.error('Error fetching product:', error);
         setError(error.message || 'Failed to fetch product.');
