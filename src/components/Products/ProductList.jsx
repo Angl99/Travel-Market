@@ -52,6 +52,7 @@ const ProductList = () => {
               {/* Add cells for other product details */}
               <td>
                 <Link to={`/update-product/${product.id}`}>Edit</Link> {/* Link to update route */}
+                <Link to={`/product-details/${product.id}`}>Details</Link> 
                 <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
               </td>
             </tr>

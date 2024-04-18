@@ -9,6 +9,7 @@ import VendorDashboard from "./components/VendorView/VendorDashboard";
 import ProductForm from "./components/Products/ProductForm";
 import ProductList from "./components/Products/ProductList";
 import UpdateProduct from './components/Products/UpdateProduct';
+import ProductItem from "./components/Products/ProductItem";
 
 // import './App.css'
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/create-product" element={<ProductForm />} />
           <Route path="/manage-products" element={<ProductList />} />
           <Route path="/update-product/:productId" element={<UpdateProduct />} />
+          <Route path="/product-details/:productId" element={<ProductItem />} />
         </Routes>
       </Router>
     </>
