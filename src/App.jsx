@@ -6,6 +6,7 @@ import Home from "./components/Home";
 // import Login from "./components/Login/Login";
 import UserSignUp from "./components/SignUp/UserSignUp";
 import VendorDashboard from "./components/VendorView/VendorDashboard";
+import ProductForm from "./components/Products/ProductForm";
 
 // import './App.css'
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/userSignUp" element={<UserSignUp />} />
           {/* <Route path="/vendorSignUp" element = {<VendorSignUp/>} /> */}
           <Route path="/vendorDash" element={<VendorDashboard />} />
+          <Route path="/create-product" element={<ProductForm />} />
         </Routes>
       </Router>
     </>
