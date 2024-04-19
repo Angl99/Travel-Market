@@ -3,7 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
-// import Login from "./components/Login/Login";
+import Login from "./components/Login/Login";
+import LoginToggler from "./components/LoginToggler/LogginToggler";
 import UserSignUp from "./components/SignUp/UserSignUp";
 import VendorDashboard from "./components/VendorView/VendorDashboard";
 import ProductForm from "./components/Products/ProductForm";
@@ -39,7 +40,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/login" element={<Login />} />
           <Route path="/userSignUp" element={<UserSignUp />} />
           <Route path="/vendorDash" element={<VendorDashboard />} />
           <Route path="/create-product" element={<ProductForm />} />
