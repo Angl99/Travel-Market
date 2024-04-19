@@ -5,9 +5,7 @@ const VendorDashboard = () => {
   return (
     
     <div className="vendor-dashboard">
-        <Link to="/" className="homepage">
-      Home
-    </Link>
+        
       {/* <h1>Vendor Dashboard</h1> */}
       <ul>
         <li>
