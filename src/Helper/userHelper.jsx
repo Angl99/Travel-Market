@@ -1,4 +1,6 @@
 import axios from "axios";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 const index = async () => {
     try {
