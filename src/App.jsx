@@ -1,6 +1,6 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React, { useState } from "react";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home"
 import Login from "./components/Login/Login"
@@ -11,27 +11,27 @@ import ProductList from "./components/Products/ProductList";
 import UpdateProduct from './components/Products/UpdateProduct';
 import ProductItem from "./components/Products/ProductItem";
 import VendorSignUp from "./components/SignUp/VendorSignUp";
-
-// import './App.css'
+import Header from './components/Header.jsx';
+import './App.css'
 
 function App() {
   return (
-    <>
+    <div>
 
       <Router>
-        <div className="homepage-container"> </div>
-        <header className="homepage-header">
+        <Header />
+        <div> </div>
+        <header>
           
           {/* <Link to="/" className="homepage"> Home </Link> */}
-          <Link to="/login" classname="/signIn-text">
-            {" "}
-            Login
-          </Link>
-          <Link to="/userSignUp" classname="/createAccount-text">
+          <Link to="/login" />
+          <br />
+          <Link to="/userSignUp">
             {" "}
             Sign Up
           </Link>
-          <Link to="/vendorDash" className="/vendorDashboard"> Vendor Dashboard</Link>
+          <br />
+          <Link to="/vendorDash"> Vendor Dashboard</Link>
           
         </header>
         <h1>ThriveHive</h1>
@@ -43,12 +43,13 @@ function App() {
           <Route path="/vendorDash" element={<VendorDashboard/>} />
           <Route path="/create-product" element={<ProductForm />} />
           <Route path="/manage-products" element={<ProductList />} />
+          <Route path="/products" element={<ProductList />} />
           <Route path="/update-product/:productId" element={<UpdateProduct />} />
           <Route path="/product-details/:productId" element={<ProductItem />} />
           <Route path="/vendor-signup" element={<VendorSignUp />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
